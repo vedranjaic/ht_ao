@@ -1,0 +1,84 @@
+////
+/// Buttons
+//
+.btn {
+    @include transition(color);
+    @include transition(background-color);
+    white-space: nowrap;
+    border: 0;
+    padding: $size / 2 $size-10;
+    font-size: $size * 0.875;
+    
+    &:hover,
+    &:focus,
+    &.active {
+        &.btn-basic {
+            // background-color: lighten($grey-brand, 38%);
+            color: $body-color;
+            // background-color: lighten($brand-teal, 20%);
+        }
+        &.btn-primary {
+            background-color: darken($primary, 10%);
+        }
+    }
+
+    // Border radius
+    @include border-radius($radius / 2);
+
+    // Basic buttons
+    &.btn-basic {
+        color: $grey-100;
+    }
+
+    // Primary buttons
+    &.btn-primary {
+        color: $white;
+        background-color: $primary;
+    }
+
+
+
+    // Button groups
+    &.btn-group {
+        color: $white;
+        background-color: $input-border;
+    }
+
+    // Sizes
+    &.btn-sm {
+        padding: 5px 15px;
+    }
+    &.btn-xs {
+        padding: 0 15px;
+    }
+
+    // Blocks
+    &.btn-block {
+        display: block;
+        width: 100%;
+    }
+
+
+    
+    // Notifications
+    &[data-notification] {
+        position: relative;
+        &::after {
+            content: attr(data-notification);
+            background-color: $red;
+            min-width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -5px;
+            right: -3px;
+            color: $white;
+            font-size: 10px;
+            font-family: $font;
+            font-weight: 500;
+        }
+    }
+}

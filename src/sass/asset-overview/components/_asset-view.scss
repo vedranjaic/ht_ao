@@ -1,0 +1,62 @@
+////
+/// Asset view
+//
+.asset-view {
+
+    // Node OIB
+    .node-oib {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include border-radius($radius);
+        background-color: brand-colors(blue-dark);
+        color: $white;
+
+        // Container
+        &--container {
+            display: flex;
+        }
+
+        // User type
+        &--user-type {
+            @include border-radius($radius);
+            display: flex;
+            align-items: center;
+            padding-left: $size / 2;
+            padding-right: $size / 2;
+            background-color: darken(brand-colors(blue-dark), 10%);
+        }
+
+        // User and account details
+        &--user-details,
+        &--account-details {
+            display: flex;
+            padding-top: $size-10 / 2;
+            padding-bottom: $size-10 / 2;
+            span {
+                display: flex;
+                flex: 1;
+            }
+        }
+
+        // User details
+        &--user-details {
+            flex-direction: column;
+            padding-left: $size-10;
+            font-size: $size * 0.6875;
+        }
+
+        // Account-details
+        &--account-details {
+            padding-right: $size-10;
+            [class^='account-details--'] {
+                display: flex;
+                flex-direction: column;
+                margin-left: $size-10;
+                span {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

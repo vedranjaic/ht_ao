@@ -1,0 +1,25 @@
+////
+/// Asset menu
+//
+.asset-menu {
+    @include transition(width);
+    background-color: $grey-100;
+
+    // Nav tabs
+    .nav-tabs {
+        & > li {
+            & > a {
+                padding-top: $size-10 / 2;
+                padding-bottom: $size-10 / 2;
+                font-size: $size * 0.875;
+            }
+        }
+    }
+
+    // Tab content
+    .tab-content {
+        padding: $size-30 / 2 $size-10;
+    }
+
+}
+

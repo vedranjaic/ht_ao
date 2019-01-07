@@ -1,0 +1,30 @@
+// Mixins buttons
+@mixin button-variant($color, $background, $hover-background: darken($background, 10%), $active-background: darken($background, 10%)) {
+color: $color;
+
+@include hover {
+color: $color;
+}
+
+&:focus,
+&.focus {
+// Focused styles
+}
+
+// Disabled comes first so active can properly restyle
+&.disabled,
+&:disabled {
+color: $color;
+background-color: $background;
+}
+
+&:not(:disabled):not(.disabled):active,
+&:not(:disabled):not(.disabled).active {
+color: $color;
+background-color: $active-background;
+
+&:focus {
+// Focused styles
+}
+}
+}

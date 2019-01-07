@@ -1,0 +1,35 @@
+// Asset filter
+#asset-filter {
+
+    // Filter relations
+    .filter-relations {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        button {
+            flex-basis: 48%;
+            margin-bottom: $size / 2;
+        }
+    }
+
+    // Filter grouping
+    .filter-grouping {
+        display: flex;
+        justify-content: space-between;
+        margin-top: $size-30 / 2;
+        margin-bottom: $size-30 / 2;
+        &--group,
+        &--show {
+            flex-basis: 48%;
+            flex-direction: column;
+            justify-content: space-between;
+            .btn-group {
+                display: flex;
+                justify-content: space-between;
+            }
+            button {
+                flex-basis: 46%;
+            }
+        }
+    }
+}

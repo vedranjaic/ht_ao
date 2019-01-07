@@ -1,0 +1,170 @@
+//
+// --- [ Settings ] --- //
+//
+$enable-caret:   false !default; // Add caret arrow on all .dropdown-toggle anchors through ::after content
+$enable-rounded: true !default; // Add border-radius throughout the design
+
+// --- [ Colors ] --- //
+$white:    #ffffff !default;
+$grey-100: #ededed !default;
+$grey-200: #d0d0d0 !default;
+$grey-300: #a4a4a4 !default;
+$grey-400: #767676 !default;
+$grey-500: #6c6c6c !default;
+$grey-600: #4b4b4b !default;
+$black:    #333333 !default;
+
+// --- [ Greys ] --- //
+$greys: () !default;
+$greys: map-merge(
+  (
+    "100": $grey-100,
+    "200": $grey-200,
+    "300": $grey-300,
+    "400": $grey-400,
+    "500": $grey-500,
+    "600": $grey-600
+  ),
+  $greys
+);
+
+// --- [ Functional colors ] --- //
+$yellow: #fecb00;
+$green:  #6bb324;
+$blue:   #00a1de;
+$red:    #d90000;
+
+$functional-colors: () !default;
+$functional-colors: map-merge(
+  (
+    blue:   $blue,
+    red:    $red,
+    yellow: $yellow,
+    green:  $green
+  ),
+  $functional-colors
+);
+
+// --- [ Brand colors ] --- //
+$magenta:      #e20074;
+$green-light:  #6bb324;
+$green-dark:   #6bb324;
+$petrol-light: #1bada2;
+$petrol-dark:  #218076;
+$orange:       #ff9a1e;
+$orange-iskon: #eb7203;
+$blue-dark:    #317cb3;
+
+$brand-colors: () !default;
+$brand-colors: map-merge(
+  (
+    "magenta":      $magenta,
+    "green-light":  $green-light,
+    "green-dark":   $green-dark,
+    "petrol-light": $green-light,
+    "red":          $red,
+    "orange":       $orange,
+    "orange-iskon": $orange-iskon,
+    "blue-dark":    $blue-dark
+  ),
+  $brand-colors
+);
+
+// --- [ Theme colors ] --- //
+$primary:       $magenta !default;
+$basic:         $grey-600 !default;
+$success:       $green !default;
+$info:          $blue !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $grey-100 !default;
+$dark:          $grey-600 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "basic":      $basic,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
+
+
+//
+// --- [ Size and radius ] --- //
+//
+$size:    1rem !default;
+$size-10: $size * 0.625 !default; // 10px
+$size-20: $size * 1.25 !default;  // 20px
+$size-30: $size * 1.875 !default; // 30px
+$radius:  $size * 0.5 !default;   // 8px
+
+
+//
+// --- [ Grid breakpoints ] --- //
+//
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px
+) !default;
+
+// Grid layout
+$grid-columns: 12 !default;
+$grid-gutter:  $size-30 !default;
+
+
+//
+// --- [ Fonts ] --- //
+//
+// $font: Helvetica, Arial, sans-serif;
+// $font-regular: 'Tele-Normal';
+// $font-bold:    'Tele-Fet';
+$font-primary:  'Roboto';
+$font-fallback: 'Helvetica, sans-serif';
+$font-fa:       'FontAwesome';
+$font:          $font-primary, $font-fallback;
+
+
+//
+// --- [ Body ] --- //
+//
+$body-bg:                   $grey-100 !default;
+$body-color:                $grey-600 !default;
+
+//
+// --- [ Links ] --- //
+//
+$link-color:                theme-color("primary") !default;
+$link-decoration:           none !default;
+$link-hover-color:          darken($link-color, 15%) !default;
+$link-hover-decoration:     underline !default;
+
+
+// --- [ Animation ] --- //
+$ease: 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+
+// --- [ Form ] --- //
+$form-element-size:   $size * 2; // 32px on 16px font-size
+$form-element-xs:     $form-element-size - 0.5rem;
+$form-element-sm:     $form-element-size - 0.25rem;
+$form-element-lg:     $form-element-size + 0.25rem;
+$label-color-default: $grey-400;
+$label-color-primary: $primary;
+$input-border:        $white;
+
+// --- [ Header ] --- //
+// $header-height: 60px;
+
+// --- [ Sidebar ] --- //
+$sidebar-width:        250px;
+$sidebar-closed-width: 0;

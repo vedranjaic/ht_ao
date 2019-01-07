@@ -1,0 +1,54 @@
+////
+/// Tabs
+//
+.nav-tabs {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    li {
+        flex: 1;
+        text-align: center;
+
+        // Active tab
+        &.active {
+            a {
+                background-color: $grey-100;
+            }
+        }
+        a {
+            @include transition(background-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: $grey-400;
+            background-color: $white;
+            &:hover {
+                cursor: default;
+            }
+            span {
+                display: block;
+                font-size: 0.8em;
+                .sidebar-closed & {
+                    display: none;
+                }
+            }
+            .icon {
+                display: none;
+                .sidebar-closed & {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+////
+/// Tab pane
+//
+.tab-pane {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
