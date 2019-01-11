@@ -1,0 +1,193 @@
+// Nodes
+.node-column {
+    height: calc(100vh - (2 * #{$node-height}) - #{$size});
+    overflow-y: scroll;
+}
+
+.node {
+
+    // Node template
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $node-height;
+    min-width: $node-width;
+    margin-bottom: $size / 3;
+    border: 2px solid transparent;
+    @include border-radius($radius / 2);
+    @include transition(border-color);
+    
+    // Node OIB
+    &.node-oib {
+        background-color: brand-colors(blue-navy);
+        border-left-color: darken(brand-colors(blue-navy), 10%);
+        color: $white;
+    }
+
+    // Node Billing account
+    &.node-ba {
+        background-color: functional-colors(blue);
+        border-left-color: darken(functional-colors(blue), 10%);
+        color: $white;
+    }
+
+    // Node Asset
+    &.node-asset {
+        border: 2px solid grey(200);
+        background-color: $white;
+        color: grey(400);
+    }
+
+    // Node hover styles
+    &.node-ba,
+    &.node-asset {
+        @include hover-focus {
+            border-color: theme-colors(primary);
+            .node-info--type {
+                border-color: theme-colors(primary);
+            }
+        }
+    }
+
+    // Node selected
+    &.selected {
+        .node-info--type {
+            background-color: theme-colors(primary);
+            color: $white;
+        }
+    }
+}
+
+// Node info
+.node-info {
+    display: flex;
+
+    // Node type
+    &--type {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $size-30;
+        padding-left: $size / 2;
+        padding-right: $size / 2;
+        @include border-radius-left($radius / 2);
+        @include transition(border-color);
+        .icon {
+            font-size: $size * 1.4;
+            opacity: 0.9;
+        }
+
+        // Node OIB
+        .node-oib & {
+            background-color: darken(brand-colors(blue-navy), 10%);
+            border-top: 2px solid darken(brand-colors(blue-navy), 10%);
+            border-bottom: 2px solid darken(brand-colors(blue-navy), 10%);
+        }
+        
+        // Node Billing account
+        .node-ba & {
+            background-color: darken(functional-colors(blue), 10%);
+            border-top: 2px solid darken(functional-colors(blue), 10%);
+            border-bottom: 2px solid darken(functional-colors(blue), 10%);
+        }
+
+        // Node Asset
+        .node-asset & {
+            background-color: grey(100);
+            border-top: 2px solid grey(200);
+            border-bottom: 2px solid grey(200);
+        }
+    }
+
+    // Node data
+    &--data {
+        display: flex;
+        flex-direction: column;
+        padding: $size / 2;
+        font-size: $size * 0.6875;
+
+        .node-ba &,
+        .node-asset & {
+            max-width: $node-width - $node-width / 3;
+
+            // Titles
+            .data-title {
+                @extend %text-overflow;
+            }
+        }
+    }
+}
+
+// Node details
+.node-details {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    padding: $size / 5 $size / 4;
+
+    // Node OIB
+    .node-oib & {
+        [class^="account-details--"] {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: $size / 2;
+            justify-content: space-between;
+        }
+    }
+
+    // Node Billing account
+    .node-ba & {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // Node Asset
+    .node-asset & {
+        flex-direction: column;
+
+        // Hover
+        @include hover {
+            .relation {
+                opacity: 0.3;
+            }
+        }
+        
+        .relation {
+            @include transition(opacity);
+            position: relative;
+            width: $size-10;
+            height: $size-10;
+            margin-bottom: 1px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            // Hover
+            @include hover {
+                opacity: 1;
+            }
+
+            // Show relation names on smaller screens
+            &::before {
+                content: attr(title);
+                position: absolute;
+                right: 100%;
+                margin-right: $size / 2;
+                font-size: $size / 2;
+                white-space: nowrap;
+                @include breakpoint(md) {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+// Relations
+@each $color, $value in $brand-colors {
+    .relation-#{$color} {
+        background-color: brand-colors(#{$color});
+    }
+}

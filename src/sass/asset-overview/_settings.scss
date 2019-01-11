@@ -3,6 +3,8 @@
 //
 $enable-caret:   false !default; // Add caret arrow on all .dropdown-toggle anchors through ::after content
 $enable-rounded: true !default; // Add border-radius throughout the design
+$enable-debug:   false !default; // Visual feedback when debugging
+
 
 // --- [ Colors ] --- //
 $white:    #ffffff !default;
@@ -15,23 +17,23 @@ $grey-600: #4b4b4b !default;
 $black:    #333333 !default;
 
 // --- [ Greys ] --- //
-$greys: () !default;
-$greys: map-merge(
+$grey: () !default;
+$grey: map-merge(
   (
-    "100": $grey-100,
-    "200": $grey-200,
-    "300": $grey-300,
-    "400": $grey-400,
-    "500": $grey-500,
-    "600": $grey-600
+    100: $grey-100,
+    200: $grey-200,
+    300: $grey-300,
+    400: $grey-400,
+    500: $grey-500,
+    600: $grey-600
   ),
-  $greys
+  $grey
 );
 
 // --- [ Functional colors ] --- //
 $yellow: #fecb00;
 $green:  #6bb324;
-$blue:   #00a1de;
+$blue:   #357db1;
 $red:    #d90000;
 
 $functional-colors: () !default;
@@ -53,19 +55,24 @@ $petrol-light: #1bada2;
 $petrol-dark:  #218076;
 $orange:       #ff9a1e;
 $orange-iskon: #eb7203;
+$purple:       #b261aa;
 $blue-dark:    #317cb3;
+$blue-navy:    #1a3e58;
 
 $brand-colors: () !default;
 $brand-colors: map-merge(
   (
-    "magenta":      $magenta,
-    "green-light":  $green-light,
-    "green-dark":   $green-dark,
-    "petrol-light": $green-light,
-    "red":          $red,
-    "orange":       $orange,
-    "orange-iskon": $orange-iskon,
-    "blue-dark":    $blue-dark
+    "magenta1":       $magenta,
+    "iskon":          $orange-iskon,
+    "vpn":            $green-light,
+    "vpn-pri":        $petrol-dark,
+    "split-contract": $petrol-light,
+    "house-hold":     $blue-dark,
+    "twin-card":      $red,
+    "podijeli-net":   $green-dark,
+    "simpa-clan":     $orange,
+    "fiksni-clan":    $purple,
+    "blue-navy":      $blue-navy
   ),
   $brand-colors
 );
@@ -115,12 +122,12 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1600px
+  xxl: 1440px
 ) !default;
 
 // Grid layout
 $grid-columns: 12 !default;
-$grid-gutter:  $size-30 !default;
+$grid-gutter:  $size-10 !default;
 
 
 //
@@ -141,10 +148,17 @@ $font:          $font-primary, $font-fallback;
 $body-bg:                   $grey-100 !default;
 $body-color:                $grey-600 !default;
 
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold:  175 !default;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark:             $grey-600 !default;
+$yiq-text-light:            $white !default;
+
 //
 // --- [ Links ] --- //
 //
-$link-color:                theme-color("primary") !default;
+$link-color:                theme-colors(primary) !default;
 $link-decoration:           none !default;
 $link-hover-color:          darken($link-color, 15%) !default;
 $link-hover-decoration:     underline !default;
@@ -162,9 +176,18 @@ $label-color-default: $grey-400;
 $label-color-primary: $primary;
 $input-border:        $white;
 
-// --- [ Header ] --- //
-// $header-height: 60px;
-
 // --- [ Sidebar ] --- //
 $sidebar-width:        250px;
 $sidebar-closed-width: 0;
+
+// --- [ Nav tabs ] --- //
+$nav-tab-height: 30px;
+
+
+
+////
+/// --- [ ASSET OVERVIEW ] --- //
+//
+// --- [ Nodes ] --- //
+$node-height: $size * 3.4375; // 55px
+$node-width: 190px; 

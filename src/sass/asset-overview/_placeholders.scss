@@ -9,6 +9,16 @@
 	white-space: nowrap;
 }
 
+// Labels
+%label {
+    display: block;
+    margin-bottom: $size-10 / 2;
+    font-size: $size * 0.6875;
+    font-family: $font;
+    font-weight: 400;
+    color: $label-color-default;
+}
+
 // Checkboxes
 %checkbox {
 	input[type=checkbox] {
@@ -58,4 +68,14 @@
 		display: inline-block;
 		letter-spacing: 5px;
 	}
+}
+
+// Tab triangles
+%tab-triangle {
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 0;
+	height: 0;
+	border-top: $nav-tab-height solid $white;
 }

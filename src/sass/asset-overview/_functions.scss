@@ -9,7 +9,7 @@
 }
 
 // Theme colors
-@function theme-color($key: "primary") {
+@function theme-colors($key: "primary") {
 	@if not map-has-key($theme-colors, $key) {
 		@warn "Color #{$key} not found in theme-color map.";
 	}
@@ -29,6 +29,20 @@
 	@if not map-has-key($grey, $key) {
 		@warn "Color #{$key} not found in grey map.";
 	}
-	@return map-get($greys, $key);
+	@return map-get($grey, $key);
 }
 			
+// Color contrast
+@function color-yiq($color) {
+	$r: red($color);
+	$g: green($color);
+	$b: blue($color);
+
+	$yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+	@if ($yiq >= $yiq-contrasted-threshold) {
+		@return $yiq-text-dark;
+	} @else {
+		@return $yiq-text-light;
+	}
+}

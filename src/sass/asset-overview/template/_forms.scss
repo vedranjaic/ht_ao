@@ -2,15 +2,6 @@
 /// Forms
 //
 
-%label {
-    display: block;
-    margin-bottom: $size-10 / 2;
-    font-size: $size * 0.6875;
-    font-family: $font;
-    font-weight: 400;
-    color: $label-color-default;
-}
-
 // Form group
 .form-group {
     display: flex;

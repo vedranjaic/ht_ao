@@ -17,13 +17,15 @@
         }
         a {
             @include transition(background-color);
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            height: $nav-tab-height;
             text-decoration: none;
             color: $grey-400;
             background-color: $white;
-            &:hover {
+            @include hover {
                 cursor: default;
             }
             span {
@@ -37,6 +39,24 @@
                 display: none;
                 .sidebar-closed & {
                     display: block;
+                }
+            }
+
+            // Filter
+            &[aria-controls="asset-filter"] {
+                &::after {
+                    @extend %tab-triangle;
+                    right: 0;
+                    border-left: $nav-tab-height / 2 solid transparent;
+                }
+            }
+
+            // Detalji
+            &[aria-controls="asset-details"] {
+                &::after {
+                    @extend %tab-triangle;
+                    left: 0;
+                    border-right: $nav-tab-height / 2 solid transparent;
                 }
             }
         }
