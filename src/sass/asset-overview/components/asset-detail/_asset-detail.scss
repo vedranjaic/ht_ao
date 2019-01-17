@@ -1,0 +1,104 @@
+// Asset detail
+.asset-detail {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $size-10;
+
+    @include border-radius-left($radius / 2);
+
+    .data-value {
+        margin: 0;
+    }
+}
+
+// Get color values from $brand-colors map and set a per-step color as asset-detail heading background
+@for $i from 1 through length($brand-colors) {
+    $values: map-values($brand-colors);
+    .asset-step-#{$i} {
+        .asset-detail--heading {
+            background-color: nth($values, $i);
+            color: $white;
+        }
+    }
+}
+
+.asset-detail--heading {
+    position: relative;
+    z-index: 100;
+    padding: $size-10;
+    box-shadow: 0 0 10px 3px grey(200);
+    @include border-radius-top($radius / 2);
+
+    .asset-detail--title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $size-10;
+        h3 {
+            font-weight: 400;
+        }
+    }
+    .asset-detail--details {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 300;
+        .label {
+            color: $white;
+        }
+    }
+}
+
+.asset-detail--pricing {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 98;
+    padding: $size-10;
+    background-color: grey(200);
+    box-shadow: 0 0 10px 3px grey(200);
+    font-weight: 300;
+    .label {
+        color: theme-colors(primary);
+    }
+
+    .pricing-no-vat {
+        .icon {
+            color: theme-colors(primary);
+        }
+    }
+}
+
+.asset-detail--data {
+    position: relative;
+    z-index: 99;
+    padding: $size-10;
+    background-color: $white;
+    border-bottom-left-radius: $radius / 2;
+    box-shadow: 0 0 10px 3px grey(200);
+    font-weight: 300;
+
+    .data-group {
+        margin-bottom: $size-10;
+    }
+
+    .label {
+        color: theme-colors(primary);
+    }
+
+    .data-value {
+        color: grey(400);
+    }
+}
+
+.asset-detail--collapser {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
+    a {
+        padding: $size-10 / 4 $size-10;
+        line-height: 1;
+        background-color: $white;
+        box-shadow: 0 8px 10px 1px grey(200);
+        @include border-radius-bottom($radius / 2);
+    }
+}

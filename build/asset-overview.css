@@ -2015,8 +2015,7 @@ select {
 .modal .modal-content .modal-header,
 .modal .modal-content .modal-body,
 .modal .modal-content .modal-footer {
-  padding: 0.9375rem;
-  background-color: #ffffff;
+  padding: 0.625rem;
 }
 .modal .modal-content .modal-header {
   display: -ms-flexbox;
@@ -2027,6 +2026,7 @@ select {
   justify-content: space-between;
   border-bottom: 1px solid #ededed;
   border-radius: 0.5rem 0.5rem 0 0;
+  background-color: #ffffff;
 }
 .modal .modal-content .modal-header .modal-title {
   margin: 0;
@@ -2055,6 +2055,7 @@ select {
   justify-content: flex-end;
   border-top: 1px solid #ededed;
   border-radius: 0 0 0.5rem 0.5rem;
+  background-color: #ffffff;
 }
 .modal .filter-sidebar {
   -ms-flex-direction: row;
@@ -2521,6 +2522,162 @@ select {
 
 .relation-blue-navy {
   background-color: #1a3e58;
+}
+
+.asset-detail {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 0.625rem;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.asset-detail .data-value {
+  margin: 0;
+}
+
+.asset-step-1 .asset-detail--heading {
+  background-color: #e20074;
+  color: #ffffff;
+}
+
+.asset-step-2 .asset-detail--heading {
+  background-color: #eb7203;
+  color: #ffffff;
+}
+
+.asset-step-3 .asset-detail--heading {
+  background-color: #6bb324;
+  color: #ffffff;
+}
+
+.asset-step-4 .asset-detail--heading {
+  background-color: #218076;
+  color: #ffffff;
+}
+
+.asset-step-5 .asset-detail--heading {
+  background-color: #1bada2;
+  color: #ffffff;
+}
+
+.asset-step-6 .asset-detail--heading {
+  background-color: #317cb3;
+  color: #ffffff;
+}
+
+.asset-step-7 .asset-detail--heading {
+  background-color: #d90000;
+  color: #ffffff;
+}
+
+.asset-step-8 .asset-detail--heading {
+  background-color: #6bb324;
+  color: #ffffff;
+}
+
+.asset-step-9 .asset-detail--heading {
+  background-color: #ff9a1e;
+  color: #ffffff;
+}
+
+.asset-step-10 .asset-detail--heading {
+  background-color: #b261aa;
+  color: #ffffff;
+}
+
+.asset-step-11 .asset-detail--heading {
+  background-color: #1a3e58;
+  color: #ffffff;
+}
+
+.asset-detail--heading {
+  position: relative;
+  z-index: 100;
+  padding: 0.625rem;
+  box-shadow: 0 0 10px 3px #d0d0d0;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.asset-detail--heading .asset-detail--title {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 0.625rem;
+}
+.asset-detail--heading .asset-detail--title h3 {
+  font-weight: 400;
+}
+.asset-detail--heading .asset-detail--details {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-weight: 300;
+}
+.asset-detail--heading .asset-detail--details .label {
+  color: #ffffff;
+}
+
+.asset-detail--pricing {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  z-index: 98;
+  padding: 0.625rem;
+  background-color: #d0d0d0;
+  box-shadow: 0 0 10px 3px #d0d0d0;
+  font-weight: 300;
+}
+.asset-detail--pricing .label {
+  color: #e20074;
+}
+.asset-detail--pricing .pricing-no-vat .icon {
+  color: #e20074;
+}
+
+.asset-detail--data {
+  position: relative;
+  z-index: 99;
+  padding: 0.625rem;
+  background-color: #ffffff;
+  border-bottom-left-radius: 0.25rem;
+  box-shadow: 0 0 10px 3px #d0d0d0;
+  font-weight: 300;
+}
+.asset-detail--data .data-group {
+  margin-bottom: 0.625rem;
+}
+.asset-detail--data .label {
+  color: #e20074;
+}
+.asset-detail--data .data-value {
+  color: #767676;
+}
+
+.asset-detail--collapser {
+  position: relative;
+  z-index: 100;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.asset-detail--collapser a {
+  padding: 0.15625rem 0.625rem;
+  line-height: 1;
+  background-color: #ffffff;
+  box-shadow: 0 8px 10px 1px #d0d0d0;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.modal-body {
+  background-color: #ededed;
 }
 
 
