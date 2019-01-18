@@ -87,6 +87,14 @@
     .data-value {
         color: grey(400);
     }
+
+    // Toggle Asset details data
+    &-more {
+        &.collapse-open-false {
+            display: none;
+        }
+    }
+
 }
 
 .asset-detail--collapser {
@@ -94,11 +102,18 @@
     z-index: 100;
     display: flex;
     justify-content: flex-end;
+
+    @include collapser();
+
     a {
         padding: $size-10 / 4 $size-10;
         line-height: 1;
         background-color: $white;
         box-shadow: 0 8px 10px 1px grey(200);
+        @include transition(color);
         @include border-radius-bottom($radius / 2);
+        @include hover-focus {
+            color: theme-colors(primary);
+        }
     }
 }

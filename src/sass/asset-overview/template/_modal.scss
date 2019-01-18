@@ -83,7 +83,6 @@
             background-color: $white;
             .modal-title {
                 margin: 0;
-                color: $grey-600;
             }
             .modal-close {
                 @include transition(opacity);
@@ -107,7 +106,6 @@
         // Modal footer
         .modal-footer {
             display: flex;
-            justify-content: flex-end;
             border-top: 1px solid $grey-100;
             border-radius: 0 0 $radius $radius;
             background-color: $white;

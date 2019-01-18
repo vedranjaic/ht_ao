@@ -1,18 +1,15 @@
 // Collapser
 @mixin collapser {
-	&[aria-expanded="false"] {
+	.collapser {
+		@include transition(transform);
+	}
+	&.collapse-open-true {
 		.collapser {
-			@include transition;
 			transform: rotate(-180deg);
 		}
 	}
-	&[aria-expanded="true"] {
-		.collapser {
-			@include transition;
-		}
-	}
-	&:hover,
-	&:focus {
+
+	@include hover-focus {
 		text-decoration: none;
 	}
 }
