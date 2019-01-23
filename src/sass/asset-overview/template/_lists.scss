@@ -7,7 +7,7 @@
     
 }
 
-.list-inline {
+.ao-list-inline {
     @extend %list;
     align-items: center;
     & > li {
@@ -16,12 +16,12 @@
     }
 }
 
-.list-unstyled {
+.ao-list-unstyled {
     list-style-type: none;
     padding: 0;
 }
 
-.list-column {
+.ao-list-column {
     @extend %list;
     flex-direction: column;
 }

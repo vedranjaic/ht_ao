@@ -1,7 +1,7 @@
 ////
 /// Dropdown
 //
-.dropdown {
+.ao-dropdown {
     position: relative;
 
     
@@ -96,7 +96,7 @@
 }
 
 // Checkbox in dropdown
-.dropdown-menu--checkbox {
+.ao-dropdown-menu--checkbox {
     padding-top: 7px;
     padding-bottom: 7px;
     & > li {

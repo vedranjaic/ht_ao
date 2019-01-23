@@ -1,13 +1,13 @@
 // Form validation
-.validation-valid {
+.ao-validation-valid {
     border-color: functional(green) !important;
 }
-.validation-invalid {
+.ao-validation-invalid {
     border-color: functional(red) !important;
 }
 
 // Validation feedback
-.validation-feedback {
+.ao-validation-feedback {
     font-size: 12px;
     &.validation-feedback-valid {
         color: functional(green);

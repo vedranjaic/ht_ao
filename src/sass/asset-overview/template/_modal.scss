@@ -1,10 +1,10 @@
 ////
 /// Modal
 //
-.modal-open {
+.ao-modal-open {
     overflow: hidden;
 }
-.modal {
+.ao-modal {
     // @include transition(background-color);
     @include transition(opacity background-color);
     display: flex;

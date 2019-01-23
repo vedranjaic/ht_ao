@@ -1,7 +1,7 @@
 ////
 /// Buttons
 //
-.btn {
+.ao-btn {
     @include transition(color);
     @include transition(background-color);
     white-space: nowrap;
@@ -62,14 +62,14 @@
 
 // Brand buttons
 @each $color, $value in $brand-colors {
-    .btn-#{$color} {
+    .ao-btn-#{$color} {
         @include button-variant($value, $value);
     }
 }
 
 // Theme buttons
 @each $color, $value in $theme-colors {
-    .btn-#{$color} {
+    .ao-btn-#{$color} {
         @include button-variant($value, $value);
     }
 }

@@ -35,6 +35,7 @@ $yellow: #fecb00;
 $green:  #6bb324;
 $blue:   #357db1;
 $red:    #d90000;
+$hover:  #eaf9fe;
 
 $functional-colors: () !default;
 $functional-colors: map-merge(
@@ -189,5 +190,5 @@ $nav-tab-height: 30px;
 /// --- [ ASSET OVERVIEW ] --- //
 //
 // --- [ Nodes ] --- //
-$node-height: $size * 3.4375; // 55px
+$node-height: $size * 3.8375; // 55px
 $node-width: 190px; 
