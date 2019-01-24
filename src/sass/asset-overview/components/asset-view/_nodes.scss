@@ -20,7 +20,6 @@
     // Node OIB
     &.node-oib {
         background-color: brand-colors(blue-navy);
-        // border-left-color: darken(brand-colors(blue-navy), 10%);
         color: $white;
         text-decoration: none;
     }
@@ -28,9 +27,12 @@
     // Node Billing account
     &.node-ba {
         background-color: functional-colors(blue);
-        // border-left-color: darken(functional-colors(blue), 10%);
         color: $white;
         text-decoration: none;
+
+        @include hover-focus {
+            border-color: theme-colors(primary);
+        }
     }
 
     // Node Asset
@@ -44,12 +46,9 @@
     // Node hover styles
     &.node-ba,
     &.node-asset {
-        @include hover-focus {
-            border-color: theme-colors(primary);
-            .node-info--type {
-                border-color: theme-colors(primary);
-            }
-        }
+        // @include hover-focus {
+        //     border-color: theme-colors(primary);
+        // }
     }
 
     // Node selected
@@ -75,8 +74,8 @@
         width: $size-30;
         padding-left: $size / 2;
         padding-right: $size / 2;
-        @include border-radius-left($radius / 2);
-        @include transition(border-color);
+        @include border-radius-left($radius / 4);
+
         .icon {
             font-size: $size * 1.4;
             opacity: 0.9;
@@ -197,5 +196,69 @@
 @each $color, $value in $brand-colors {
     .relation-#{$color} {
         background-color: brand-colors(#{$color});
+    }
+}
+
+// Relations
+@each $color, $value in $brand-colors {
+    .relation-pair-#{$color} {
+        border-color: brand-colors(#{$color}) !important;
+        .node-info--type {
+            background-color: brand-colors(#{$color});
+            color: $white;
+        }
+        // @include hover-focus {
+        //     border-color: brand-colors(#{$color});
+        // }
+    }
+}
+
+// Status
+.status {
+    position: relative;
+    %status-icon {
+        position: absolute;
+        content: '';
+        height: $size-30;
+        width: 2px;
+        background-color: $red;
+        .selected & {
+            background-color: $white;;
+        }
+    }
+    
+    &.status-disconnected {
+        .status-icon {
+            position: absolute;
+            top: $size-30 / 2;
+            &::before,
+            &::after {
+                @extend %status-icon;
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    &.status-suspended {
+        .status-icon {
+            position: absolute;
+            top: $size-30;
+            left: $size-10 / 2;
+            &::before {
+                position: absolute;
+                content: '';
+                width: $size-20;
+                height: 2px;
+                background-color: $red;
+                .selected & {
+                    background-color: $white;
+                }
+            }
+        }
     }
 }

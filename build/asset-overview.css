@@ -2204,17 +2204,14 @@ select {
   color: #ffffff;
   text-decoration: none;
 }
+.node.node-ba:hover, .node.node-ba:focus {
+  border-color: #e20074;
+}
 .node.node-asset {
   border: 2px solid #d0d0d0;
   background-color: #ffffff;
   color: #767676;
   text-decoration: none;
-}
-.node.node-ba:hover, .node.node-ba:focus, .node.node-asset:hover, .node.node-asset:focus {
-  border-color: #e20074;
-}
-.node.node-ba:hover .node-info--type, .node.node-ba:focus .node-info--type, .node.node-asset:hover .node-info--type, .node.node-asset:focus .node-info--type {
-  border-color: #e20074;
 }
 .node.selected {
   border-color: #e20074;
@@ -2239,9 +2236,8 @@ select {
   width: 1.875rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-  transition: border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-top-left-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
 }
 .node-info--type .icon {
   font-size: 1.4rem;
@@ -2374,6 +2370,135 @@ select {
 
 .relation-blue-navy {
   background-color: #1a3e58;
+}
+
+.relation-pair-magenta1 {
+  border-color: #e20074 !important;
+}
+.relation-pair-magenta1 .node-info--type {
+  background-color: #e20074;
+  color: #ffffff;
+}
+
+.relation-pair-iskon {
+  border-color: #eb7203 !important;
+}
+.relation-pair-iskon .node-info--type {
+  background-color: #eb7203;
+  color: #ffffff;
+}
+
+.relation-pair-vpn {
+  border-color: #6bb324 !important;
+}
+.relation-pair-vpn .node-info--type {
+  background-color: #6bb324;
+  color: #ffffff;
+}
+
+.relation-pair-vpn-pri {
+  border-color: #218076 !important;
+}
+.relation-pair-vpn-pri .node-info--type {
+  background-color: #218076;
+  color: #ffffff;
+}
+
+.relation-pair-split-contract {
+  border-color: #1bada2 !important;
+}
+.relation-pair-split-contract .node-info--type {
+  background-color: #1bada2;
+  color: #ffffff;
+}
+
+.relation-pair-house-hold {
+  border-color: #317cb3 !important;
+}
+.relation-pair-house-hold .node-info--type {
+  background-color: #317cb3;
+  color: #ffffff;
+}
+
+.relation-pair-twin-card {
+  border-color: #d90000 !important;
+}
+.relation-pair-twin-card .node-info--type {
+  background-color: #d90000;
+  color: #ffffff;
+}
+
+.relation-pair-podijeli-net {
+  border-color: #6bb324 !important;
+}
+.relation-pair-podijeli-net .node-info--type {
+  background-color: #6bb324;
+  color: #ffffff;
+}
+
+.relation-pair-simpa-clan {
+  border-color: #ff9a1e !important;
+}
+.relation-pair-simpa-clan .node-info--type {
+  background-color: #ff9a1e;
+  color: #ffffff;
+}
+
+.relation-pair-fiksni-clan {
+  border-color: #b261aa !important;
+}
+.relation-pair-fiksni-clan .node-info--type {
+  background-color: #b261aa;
+  color: #ffffff;
+}
+
+.relation-pair-blue-navy {
+  border-color: #1a3e58 !important;
+}
+.relation-pair-blue-navy .node-info--type {
+  background-color: #1a3e58;
+  color: #ffffff;
+}
+
+.status {
+  position: relative;
+}
+.status.status-disconnected .status-icon::before, .status.status-disconnected .status-icon::after {
+  position: absolute;
+  content: '';
+  height: 1.875rem;
+  width: 2px;
+  background-color: #d90000;
+}
+.selected .status.status-disconnected .status-icon::before, .selected .status.status-disconnected .status-icon::after {
+  background-color: #ffffff;
+}
+.status.status-disconnected .status-icon {
+  position: absolute;
+  top: 0.9375rem;
+}
+.status.status-disconnected .status-icon::before {
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.status.status-disconnected .status-icon::after {
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.status.status-suspended .status-icon {
+  position: absolute;
+  top: 1.875rem;
+  left: 0.3125rem;
+}
+.status.status-suspended .status-icon::before {
+  position: absolute;
+  content: '';
+  width: 1.25rem;
+  height: 2px;
+  background-color: #d90000;
+}
+.selected .status.status-suspended .status-icon::before {
+  background-color: #ffffff;
 }
 
 .asset-detail {
