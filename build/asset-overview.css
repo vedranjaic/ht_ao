@@ -2194,6 +2194,19 @@ select {
   border-radius: 0.25rem;
   transition: border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
+.node.node-vpn {
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #6bb324;
+  color: #ffffff;
+  text-decoration: none;
+}
+.node.node-vpn .node-vpn--title {
+  font-weight: 400;
+  letter-spacing: 1px;
+}
 .node.node-oib {
   background-color: #1a3e58;
   color: #ffffff;

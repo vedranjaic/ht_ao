@@ -17,6 +17,19 @@
     @include border-radius($radius / 2);
     @include transition(border-color);
     
+    // Node VPN
+    &.node-vpn {
+        align-items: center;
+        justify-content: center;
+        background-color: $green-light;
+        color: $white;
+        text-decoration: none;
+        .node-vpn--title {
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+    }
+    
     // Node OIB
     &.node-oib {
         background-color: brand-colors(blue-navy);
